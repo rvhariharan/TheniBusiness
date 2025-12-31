@@ -195,3 +195,35 @@ document.addEventListener('DOMContentLoaded', () => {
         alert("Microsoft Login Triggered! (Firebase config required)");
     });
 });
+
+// Page load aagum pothu user status-ah check panna
+auth.onAuthStateChanged((user) => {
+    const loginTrigger = document.getElementById('loginTrigger');
+    
+    if (user) {
+        // User munnadiye login panni irukanga!
+        console.log("User already logged in:", user.displayName);
+        
+        // UI-la name and photo-vah update pannuvom
+        loginTrigger.innerHTML = `
+            <img src="${user.photoURL || '../assets/image/default-user.png'}" 
+                 style="width:25px; border-radius:50%; vertical-align:middle; margin-right:5px;"> 
+            ${user.displayName || 'User'}
+        `;
+        
+        // Optional: Logout button-ah kooda inga show pannalam
+    } else {
+        // User login pannala
+        loginTrigger.innerText = "Login";
+    }
+});
+
+// Logout panna intha function-ah call pannunga
+function logoutUser() {
+    auth.signOut().then(() => {
+        alert("Logged out successfully!");
+        window.location.reload(); // Page-ah refresh panna login button thirumba varum
+    }).catch((error) => {
+        console.error("Logout error:", error);
+    });
+}
