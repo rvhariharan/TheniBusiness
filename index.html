@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Theni Business Directory</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="script.js"></script>
-</head>
+    <link rel="stylesheet" href="../assets/css/style.css"> </head>
 <body>
 
     <header>
@@ -22,41 +20,53 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact" class="btn-contact">Contact</a></li>
                     <li><a href="#" id="loginTrigger" class="btn-login">Login</a></li>
-
-<div id="loginModal" class="modal-overlay">
-    <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <h2>Welcome Back</h2>
-        <p>Login to access exclusive offers in Theni</p>
-
-        <div class="social-login-container">
-            <button id="googleLogin" class="social-btn google">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google">
-                Continue with Google
-            </button>
-            
-            <button id="msLogin" class="social-btn microsoft">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft">
-                Continue with Microsoft
-            </button>
-        </div>
-
-        <div class="divider"><span>OR</span></div>
-
-        <form class="login-form">
-            <input type="email" placeholder="Email Address" required>
-            <input type="password" placeholder="Password" required>
-            <button type="submit" class="btn-submit">Login</button>
-        </form>
-    </div>
-</div>
                 </ul>
             </nav>
-            <div class="burger" aria-label="Toggle navigation" role="button">
-              <i class="fas fa-bars" aria-hidden="true"></i>
-            </div>
+            <div class="burger"><i class="fas fa-bars"></i></div>
         </div>
     </header>
+
+    <div id="loginModal" class="modal-overlay">
+        <div class="modal-content auth-card">
+            <span class="close-modal">&times;</span>
+            
+            <div class="auth-tabs">
+                <button class="tab-btn active" data-target="login-form">Sign In</button>
+                <button class="tab-btn" data-target="signup-form">Join Now</button>
+            </div>
+
+            <div id="login-form" class="auth-section active">
+                <h2>Welcome Back</h2>
+                <div class="social-login-container">
+    <button id="googleLogin" class="social-btn google">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google">
+        Google
+    </button>
+    
+    <button id="msLogin" class="social-btn microsoft">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo">
+        Microsoft
+    </button>
+</div>
+                <div class="divider"><span>OR</span></div>
+                <form class="login-form-fields">
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit" class="btn-submit">Login</button>
+                </form>
+            </div>
+
+            <div id="signup-form" class="auth-section">
+                <h2>Create Account</h2>
+                <form class="login-form-fields">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit" class="btn-submit">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <section id="home">
         <div class="container">
@@ -69,11 +79,11 @@
                         <div class="carousel-caption">Top Services in Theni</div>
                     </div>
                     <div class="carousel-item">
-                        <img src="../assets/image/2.jpg" alt="Banner 2">
+                        <img src="assets/image/2.jpg" alt="Banner 2">
                          <div class="carousel-caption">Best Deals Today</div>
                     </div>
                     <div class="carousel-item">
-                        <img src="../assets/image/3.jpg" alt="Banner 3">
+                        <img src="assets/image/3.jpg" alt="Banner 3">
                          <div class="carousel-caption">Local Businesses</div>
                     </div>
                     <div class="carousel-item">
@@ -371,6 +381,6 @@
         </div>
     </footer>
 
-    <script src="../script.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
