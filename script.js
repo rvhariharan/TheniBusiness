@@ -157,3 +157,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('loginModal');
+    const trigger = document.getElementById('loginTrigger');
+    const closeBtn = document.querySelector('.close-modal');
+
+    // 1. MODAL TOGGLE LOGIC
+    trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.style.display = 'flex';
+    });
+
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    // Window click panna modal close aaganum
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) modal.style.display = 'none';
+    });
+
+    // 2. FIREBASE SOCIAL LOGIN (Logic Overview)
+    // To make this work, you need to include Firebase SDK in your HTML
+    const googleBtn = document.getElementById('googleLogin');
+    const msBtn = document.getElementById('msLogin');
+
+    googleBtn.addEventListener('click', () => {
+        console.log("Redirecting to Google Auth...");
+        // After Firebase setup: 
+        // signInWithPopup(auth, googleProvider).then(...)
+        alert("Google Login Triggered! (Firebase config required)");
+    });
+
+    msBtn.addEventListener('click', () => {
+        console.log("Redirecting to Microsoft Auth...");
+        alert("Microsoft Login Triggered! (Firebase config required)");
+    });
+});

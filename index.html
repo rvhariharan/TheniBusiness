@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Theni Business Directory</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="script.js"></script>
 </head>
 <body>
 
@@ -20,6 +21,35 @@
                     <li><a href="#jobs">Jobs</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact" class="btn-contact">Contact</a></li>
+                    <li><a href="#" id="loginTrigger" class="btn-login">Login</a></li>
+
+<div id="loginModal" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Welcome Back</h2>
+        <p>Login to access exclusive offers in Theni</p>
+
+        <div class="social-login-container">
+            <button id="googleLogin" class="social-btn google">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google">
+                Continue with Google
+            </button>
+            
+            <button id="msLogin" class="social-btn microsoft">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft">
+                Continue with Microsoft
+            </button>
+        </div>
+
+        <div class="divider"><span>OR</span></div>
+
+        <form class="login-form">
+            <input type="email" placeholder="Email Address" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit" class="btn-submit">Login</button>
+        </form>
+    </div>
+</div>
                 </ul>
             </nav>
             <div class="burger" aria-label="Toggle navigation" role="button">
