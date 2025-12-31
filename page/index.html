@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theni Business Directory</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Theni Connect</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#offers">Offers</a></li>
+                    <li><a href="#store">Store</a></li>
+                    <li><a href="#jobs">Jobs</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact" class="btn-contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="burger" aria-label="Toggle navigation" role="button">
+              <i class="fas fa-bars" aria-hidden="true"></i>
+            </div>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <div class="carousel-wrapper">
+                <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                
+                <div class="carousel-container" id="imageCarousel">
+                    <div class="carousel-item">
+                        <img src="../assets/image/time-watch-window-wallpaper-preview.jpg" alt="Banner 1">
+                        <div class="carousel-caption">Top Services in Theni</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../assets/image/2.jpg" alt="Banner 2">
+                         <div class="carousel-caption">Best Deals Today</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../assets/image/3.jpg" alt="Banner 3">
+                         <div class="carousel-caption">Local Businesses</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../assets/image/4.jpg" alt="Banner 4">
+                         <div class="carousel-caption">Community Events</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../assets/image/5.jpg" alt="Banner 5">
+                         <div class="carousel-caption">Community Events</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../assets/image/6.jpg" alt="Banner 6">
+                         <div class="carousel-caption">Community Events</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../assets/image/7.jpg" alt="Banner 7">
+                         <div class="carousel-caption">Community Events</div>
+                    </div>
+                </div>
+
+                <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="hero">
+        <div class="container hero-flex">
+            <div class="hero-image">
+                 <img src="../assets/image/5.jpg" alt="Hero Image">
+            </div>
+            <div class="hero-content">
+                <h1>Discover Theni's Best Businesses & Services</h1>
+                <p>Find everything you need, from local stores to exclusive offers, right here in our district.</p>
+                <button class="btn-primary">Explore Now</button>
+            </div>
+        </div>
+    </section>
+
+<section id="offers">
+    <div class="container">
+        <h2 class="section-title">Exclusive Offers</h2>
+
+        <div class="search-filter-container">
+            <input type="text" id="offerSearch" placeholder="Search products, stores, or location (e.g. Theni, Food)...">
+            <i class="fas fa-search search-icon"></i>
+        </div>
+        
+        <div class="offers-layout-grid">
+            <div class="offers-column">
+                <h3 class="column-title">All Categories</h3>
+                <div class="cards-grid" id="allCardsGrid">
+                    
+        <article class="offer-card" data-category="Retail" data-store="Sangeetha Hotel" data-location="Theni">
+          <div class="food-label">
+            <span class="tag">Continental</span>
+            <div class="icons">
+              <span class="love"><i class="far fa-heart"></i></span>
+              <span class="rating"><i class="fa-solid fa-star"></i> 4.1</span>
+            </div>
+          </div>
+          <img src="../assets/image/r6.jpg" alt="Omelette Cheese Whole Wheat Sandwich"/>
+          <div class="card-content">
+            <h4 class="product-name">Retail</h4>
+            <p class="price">₹100.00 <s> ₹110.00</s></p>
+            <div class="card-bottom">
+              <span class="discount">5% OFF</span>
+              <button class="add-btn js-add-btn">+ Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="offer-card" data-category="Food" data-store="Sangeetha Hotel" data-location="Theni">
+          <div class="food-label">
+            <span class="tag">Continental</span>
+            <div class="icons">
+              <span class="love"><i class="far fa-heart"></i></span>
+              <span class="rating"><i class="fa-solid fa-star"></i> 4.1</span>
+            </div>
+          </div>
+          <img src="../assets/image/r1.jpg" alt="Omelette Cheese Whole Wheat Sandwich"/>
+          <div class="card-content">
+            <h4 class="product-name">Food</h4>
+            <p class="price">₹100.00 <s> ₹110.00</s></p>
+            <div class="card-bottom">
+              <span class="discount">5% OFF</span>
+              <button class="add-btn js-add-btn">+ Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="offer-card" data-category="Retail" data-store="Sangeetha Hotel" data-location="Theni">
+          <div class="food-label">
+            <span class="tag">Continental</span>
+            <div class="icons">
+              <span class="love"><i class="far fa-heart"></i></span>
+              <span class="rating"><i class="fa-solid fa-star"></i> 4.1</span>
+            </div>
+          </div>
+          <img src="../assets/image/r5.jpg" alt="Omelette Cheese Whole Wheat Sandwich"/>
+          <div class="card-content">
+            <h4 class="product-name">Retail</h4>
+            <p class="price">₹100.00 <s> ₹110.00</s></p>
+            <div class="card-bottom">
+              <span class="discount">5% OFF</span>
+              <button class="add-btn js-add-btn">+ Add</button>
+            </div>
+          </div>
+        </article>
+
+                <article class="offer-card" data-category="Food" data-store="Sangeetha Hotel" data-location="Theni">
+          <div class="food-label">
+            <span class="tag">Continental</span>
+            <div class="icons">
+              <span class="love"><i class="far fa-heart"></i></span>
+              <span class="rating"><i class="fa-solid fa-star"></i> 4.1</span>
+            </div>
+          </div>
+          <img src="../assets/image/r8.jpg" alt="Omelette Cheese Whole Wheat Sandwich"/>
+          <div class="card-content">
+            <h4 class="product-name">FOOD</h4>
+            <p class="price">₹100.00 <s> ₹110.00</s></p>
+            <div class="card-bottom">
+              <span class="discount">5% OFF</span>
+              <button class="add-btn js-add-btn">+ Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="offer-card" data-category="Food" data-store="Sangeetha Hotel" data-location="Theni">
+          <div class="food-label">
+            <span class="tag">Continental</span>
+            <div class="icons">
+              <span class="love"><i class="far fa-heart"></i></span>
+              <span class="rating"><i class="fa-solid fa-star"></i> 4.1</span>
+            </div>
+          </div>
+          <img src="../assets/image/r4.jpg" alt="Omelette Cheese Whole Wheat Sandwich"/>
+          <div class="card-content">
+            <h4 class="product-name"> Food</h4>
+            <p class="price">₹100.00 <s> ₹110.00</s></p>
+            <div class="card-bottom">
+              <span class="discount">5% OFF</span>
+              <button class="add-btn js-add-btn">+ Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="offer-card" data-category="Fashion" data-store="Sangeetha Hotel" data-location="Theni">
+          <div class="food-label">
+            <span class="tag">Continental</span>
+            <div class="icons">
+              <span class="love"><i class="far fa-heart"></i></span>
+              <span class="rating"><i class="fa-solid fa-star"></i> 4.1</span>
+            </div>
+          </div>
+          <img src="../assets/image/r3.jpg" alt="Omelette Cheese Whole Wheat Sandwich"/>
+          <div class="card-content">
+            <h4 class="product-name">Fashion</h4>
+            <p class="price">₹100.00 <s> ₹110.00</s></p>
+            <div class="card-bottom">
+              <span class="discount">5% OFF</span>
+              <button class="add-btn js-add-btn">+ Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="offer-card" data-category="Food" data-store="Sangeetha Hotel" data-location="Theni">
+          <div class="food-label">
+            <span class="tag">Continental</span>
+            <div class="icons">
+              <span class="love"><i class="far fa-heart"></i></span>
+              <span class="rating"><i class="fa-solid fa-star"></i> 4.1</span>
+            </div>
+          </div>
+          <img src="../assets/image/r2.jpg" alt="Omelette Cheese Whole Wheat Sandwich"/>
+          <div class="card-content">
+            <h4 class="product-name">Food</h4>
+            <p class="price">₹100.00 <s> ₹110.00</s></p>
+            <div class="card-bottom">
+              <span class="discount">5% OFF</span>
+              <button class="add-btn js-add-btn">+ Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="offer-card" data-category="Fashion" data-store="Sangeetha Hotel" data-location="Theni">
+          <div class="food-label">
+            <span class="tag">Continental</span>
+            <div class="icons">
+              <span class="love"><i class="far fa-heart"></i></span>
+              <span class="rating"><i class="fa-solid fa-star"></i> 4.1</span>
+            </div>
+          </div>
+          <img src="../assets/image/r1.jpg" alt="Omelette Cheese Whole Wheat Sandwich"/>
+          <div class="card-content">
+            <h4 class="product-name">Fashion</h4>
+            <p class="price">₹100.00 <s> ₹110.00</s></p>
+            <div class="card-bottom">
+              <span class="discount">5% OFF</span>
+              <button class="add-btn js-add-btn">+ Add</button>
+            </div>
+          </div>
+        </article>  
+        </div>
+            </div>
+
+            <div class="offers-column">
+                <h3 class="column-title">My Saved List</h3>
+                <div id="savedItemsContainer" class="saved-list-wrapper">
+                    <p class="empty-msg">No items added yet. Click 'Add +' to categorize.</p>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="store">
+    <div class="container">
+        <h2 class="section-title">Top Stores in Theni</h2>
+        
+        <div class="store-grid">
+            <div class="store-card">
+                <div class="store-icon"><i class="fas fa-car-side"></i></div>
+                <h3>Automotive</h3>
+                <p>0 stores</p>
+            </div>
+            <div class="store-card">
+                <div class="store-icon"><i class="fas fa-user-graduate"></i></div>
+                <h3>Education</h3>
+                <p>0 stores</p>
+            </div>
+            <div class="store-card">
+                <div class="store-icon"><i class="fas fa-laptop-code"></i></div>
+                <h3>Electronics</h3>
+                <p>0 stores</p>
+            </div>
+            <div class="store-card">
+                <div class="store-icon"><i class="fas fa-film"></i></div>
+                <h3>Entertainment</h3>
+                <p>0 stores</p>
+            </div>
+            <div class="store-card">
+                <div class="store-icon"><i class="fas fa-tshirt"></i></div>
+                <h3>Fashion</h3>
+                <p>0 stores</p>
+            </div>
+            <div class="store-card">
+                <div class="store-icon"><i class="fas fa-utensils"></i></div>
+                <h3>Restaurants</h3>
+                <p>0 stores</p>
+            </div>
+            <div class="store-card">
+                <div class="store-icon"><i class="fas fa-shopping-bag"></i></div>
+                <h3>Shopping</h3>
+                <p>0 stores</p>
+            </div>
+        </div>
+
+        <div class="stay-updated-wrapper">
+            <div class="update-content">
+                <h2>Stay Updated</h2>
+                <p>Search for services or subscribe to latest business alerts in Theni.</p>
+            </div>
+            <div class="update-search-box">
+                <input type="text" placeholder="Search for anything in Theni...">
+                <button type="submit">Search</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>Theni Connect</h3>
+                <p>Your local business guide.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#jobs">Jobs</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col" id="contact">
+                <h3>Contact</h3>
+                <p>Theni District, Tamil Nadu.</p>
+                <p>Email: info@theniconnect.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+             <p>&copy; 2023 Theni Business Connect. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js" defer></script>
+</body>
+</html>
