@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jobs — Theni Connect</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/style2.css">
+</head>
+<body>
+  <header style="padding:12px 20px; border-bottom:1px solid #eee; background:#fff;">
+    <div class="container nav-container" style="display:flex;align-items:center;justify-content:space-between;">
+      <div class="logo">Theni Connect</div>
+      <nav>
+        <a href="index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container jobs-page">
+    <aside class="jobs-list" id="jobsList">
+      <p>Loading jobs...</p>
+    </aside>
+
+    <section class="job-detail" id="jobDetail">
+      <p>Select a job to view details.</p>
+    </section>
+  </main>
+
+  <script>
+    // Parse query param id
+    const params = new URLSearchParams(window.location.search);
+    const selectedId = params.get('id');
+
+    const jobsListEl = document.getElementById('jobsList');
+    const jobDetailEl = document.getElementById('jobDetail');
+
+    const createListItem = (job, highlightId) => {
+      const div = document.createElement('div');
+      div.className = 'job-card';
+      if (String(job.id) === String(highlightId)) div.style.borderLeft = '4px solid #0073b1';
+      div.dataset.id = job.id;
+      div.innerHTML = `<h4 style="margin:0">${job.title}</h4><div class="company-name">${job.company} • ${job.location}</div>`;
+      div.addEventListener('click', () => {
+        window.location.search = `?id=${job.id}`;
+      });
+      return div;
+    };
+
+    const renderJobsList = (jobs, highlightId) => {
+      jobsListEl.innerHTML = '';
+      jobs.forEach(job => jobsListEl.appendChild(createListItem(job, highlightId)));
+    };
+
+    const renderJobDetail = (job) => {
+      if (!job) {
+        jobDetailEl.innerHTML = '<p>Job not found.</p>';
+        return;
+      }
+      const posted = new Date(job.posted_date);
+      const now = new Date();
+      const diffDays = Math.ceil(Math.abs(now - posted) / (1000*60*60*24));
+      const timeText = diffDays <= 1 ? 'Just posted' : `${diffDays} days ago`;
+
+      jobDetailEl.innerHTML = `
+        <div class="job-header">
+          <div>
+            <h2 style="margin:0">${job.title}</h2>
+            <div class="company-name">${job.company} • ${job.location}</div>
+            <div style="margin-top:8px;"><strong>${job.salary || 'Salary not disclosed'}</strong> • <span>${job.type}</span></div>
+            <div style="margin-top:8px;color:#666">${timeText}</div>
+          </div>
+          <div>
+            <button class="apply-btn">Apply on company site</button>
+          </div>
+        </div>
+        <hr />
+        <div>
+          <h3>Job details</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is a placeholder job description. Replace this with real content from the backend when available.</p>
+          <ul>
+            <li>Responsibilities: Build and maintain applications.</li>
+            <li>Requirements: Relevant experience preferred.</li>
+            <li>Location: ${job.location}</li>
+          </ul>
+        </div>
+        <div class="sidebar">
+          <h4>Profile insights</h4>
+          <p>Skills: <em>Not available</em></p>
+          <p>Education: <em>Not available</em></p>
+        </div>
+      `;
+    };
+
+    const loadJobs = async () => {
+      try {
+        const res = await fetch('/api/jobs');
+        const data = await res.json();
+        if (data.jobs) {
+          renderJobsList(data.jobs, selectedId);
+        } else {
+          jobsListEl.innerHTML = '<p>No jobs found.</p>';
+        }
+      } catch (err) {
+        jobsListEl.innerHTML = '<p style="color:red">Failed to load jobs.</p>';
+      }
+    };
+
+    const loadJobDetail = async (id) => {
+      if (!id) return;
+      try {
+        const res = await fetch(`/api/jobs/${id}`);
+        if (!res.ok) {
+          jobDetailEl.innerHTML = '<p>Job not found.</p>';
+          return;
+        }
+        const data = await res.json();
+        renderJobDetail(data.job);
+      } catch (err) {
+        jobDetailEl.innerHTML = '<p style="color:red">Failed to load job details.</p>';
+      }
+    };
+
+    // Initialize
+    loadJobs().then(() => {
+      if (selectedId) loadJobDetail(selectedId);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+    /* Minimal Indeed-like layout styles for the job detail page */
+    .jobs-page { 
+        display:flex; 
+        gap:20px; 
+        padding:20px; 
+    }
+    
+    .jobs-list { 
+        width:40%; 
+        max-height:80vh; 
+        overflow:auto; 
+        border-right:1px solid #e6e6e6; 
+        padding-right:16px; 
+    }
+    .jobs-list .job-card { 
+        padding:12px; 
+        border-radius:6px; 
+        margin-bottom:10px; 
+        background:#fff; 
+        cursor:pointer; 
+        border:1px solid #eee; 
+    }
+
+    .jobs-list .job-card:hover { 
+        box-shadow:0 2px 6px rgba(0,0,0,0.05); 
+    }
+    .job-detail { 
+        width:60%; 
+        max-height:80vh; 
+        overflow:auto; 
+        padding:16px; 
+        background:#fff; 
+        border:1px solid #eee; 
+        border-radius:6px; 
+    }
+    .apply-btn { 
+        background:#0073b1; 
+        color:#fff; 
+        padding:10px 14px; 
+        border-radius:6px; 
+        border:none; 
+        cursor:pointer; 
+    }
+    .sidebar { 
+        margin-top:16px; 
+        padding:12px; 
+        border:1px solid #eee; 
+        border-radius:6px; 
+        background:#fafafa; 
+    }
+    .job-header { 
+        display:flex; 
+        justify-content:space-between; 
+        align-items:flex-start; 
+        gap:12px; 
+    }
+    .company-name { 
+        color:#555;
+         font-size:0.95rem; 
+        }
