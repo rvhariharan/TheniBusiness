@@ -886,6 +886,24 @@ footer {
     border-top: 1px solid #444;
 }
 
+.studentlog {
+    margin-top: 20px;
+    margin-top: 20px;
+    text-align: center;
+    color: #ffeded;
+    font-size: 0.9rem;
+}
+
+.studentlog a  {
+    color: #bdadad;
+    text-decoration: none;
+}
+
+.studentlog a:hover{
+    cursor: pointer;
+    color: #008000;
+}
+
 /* === RESPONSIVE (MOBILE VIEWS) === */
 @media (max-width: 768px) {
     .nav-links {
